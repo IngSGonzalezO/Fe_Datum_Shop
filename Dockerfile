@@ -8,7 +8,7 @@ RUN npm cache clean --force
 # Copy files from local machine to virtual directory in docker image
 COPY . .
 
-RUN npm install -g npm@8.0.0
+RUN npm install -g npm@9.9.2
 
 RUN npm install --legacy-peer-deps
 
