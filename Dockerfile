@@ -19,9 +19,9 @@ RUN npm run build
 WORKDIR /app/dist
 
 # Stage 2: Serve app with nginx server
-FROM ubi8/nginx-122
+FROM nginx
 
-COPY ~/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=build /app/dist/angulardummy /usr/share/nginx/html
 
