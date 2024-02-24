@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+      <h5>Collapse accordion</h5>
+    </div>
+    <div class="card-body" ngbAccordion #accordion="ngbAccordion">
+        <div ngbAccordionItem="first">
+            <p class="common-flex">
+                <a class="btn btn-sm btn-outline-primary me-2" (click)="accordion.toggle('first')">Link with href</a>
+                <button class="btn btn-sm btn-outline-primary me-2" type="button" (click)="accordion.toggle('first')">Button with data-bs-target</button>
+            </p>
+            <div  id="collapseExample" ngbAccordionCollapse>
+                <div  ngbAccordionBody>Some placeholder content for the collapse 
+                    component. This panel is hidden by default but revealed when the user activates the relevant trigger.</div>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header pb-0">
+      <h5>Links and buttons</h5>
+    </div>
+    <div class="card-body">
+      <div class="list-group">
+            <a class="list-group-item list-group-item-action"  *ngFor="let list of lists | slice:0:5" [ngClass]="{'active': list.active}"  href="javascript:void(0)">
+                {{list.title}}
+            </a>
+        </div>
+    </div>
+  </div>

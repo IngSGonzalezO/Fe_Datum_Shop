@@ -1,0 +1,27 @@
+<div class="card o-hidden">
+    <div class="chart-widget-top">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-5 box-col-6">
+                    <h6 class="f-w-600 font-primary">{{data.name}}</h6><span class="num">
+                        <span class="counter">{{ data.counter }}</span>%<i
+                            class="icon-angle-up f-12"></i></span>
+                </div>
+                <div class="col-7 box-col-6 text-end">
+                    <h4 class="num total-value">
+                        <span *ngIf="data.type === '$'">$</span>
+                        <span class="counter">{{ data.price }}</span><span *ngIf="data.type === '$'">.00</span>
+                            <span *ngIf="data.type === 'm'">M</span></h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="chart-widget1">
+                <apx-chart [chart]="data.chart" [dataLabels]="data.dataLabels" [stroke]="data.stroke"
+                    [xaxis]="data.xaxis" [yaxis]="data.yaxis" [grid]="data.grid" [fill]="data.fill"
+                    [colors]="data.colors" [series]="data.series" [tooltip]="data.tooltip">
+                </apx-chart>
+            </div>
+        </div>
+    </div>
+</div>

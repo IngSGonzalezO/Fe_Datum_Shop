@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+      <h5>Recent Orders</h5>
+      <table class="table table-bordernone">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Cantidad</th>
+            <th>Value</th>
+            <th>Rate</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recent of recentOrders">
+            <td>
+              <div class="media"><img class="img-fluid rounded-circle" src={{recent.img}} alt="" data-original-title=""
+                  title="">
+                <div class="media-body"><a href="ecommerce/product-page"><span>{{recent.name}}</span></a></div>
+              </div>
+            </td>
+            <td>
+              <p>{{recent.date}}</p>
+            </td>
+            <td>
+              <p>{{recent.quantity}}</p>
+            </td>
+            <td><img class="img-fluid" src={{recent.value}} alt="" data-original-title="" title=""></td>
+            <td>
+              <p>{{recent.rate}}</p>
+            </td>
+            <td>
+              <p>{{recent.status}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

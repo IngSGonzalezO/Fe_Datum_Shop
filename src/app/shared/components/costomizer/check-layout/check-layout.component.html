@@ -1,0 +1,29 @@
+<ul class="sidebar-type layout-grid layout-types">
+  <li
+    class="defaul-layout"
+    [routerLink]="['/dashboard/default']"
+    [queryParams]="{ layout: false }"
+  >
+    <div class="layout-img">
+      <h6>Default layout</h6>
+    </div>
+  </li>
+  <li
+    class="compact-layout"
+    [routerLink]="['/dashboard/default']"
+    [queryParams]="{ layout: 'compact-layout' }"
+  >
+    <div class="layout-img">
+      <h6>Compact layout</h6>
+    </div>
+  </li>
+  <li
+    class="modern-layout"
+    [routerLink]="['/dashboard/default']"
+    [queryParams]="{ layout: 'modern-layout' }"
+  >
+    <div class="layout-img">
+      <h6>Modern layout</h6>
+    </div>
+  </li>
+</ul>

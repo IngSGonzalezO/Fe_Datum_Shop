@@ -1,0 +1,70 @@
+<div class="card">
+    <div class="card-header">
+      <div class="header-top d-sm-flex justify-content-between align-items-center">
+        <h5 class="m-0">Activity Timeline</h5>
+        <div class="center-content">
+          <p>Yearly User 24.65k</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="chart-main activity-timeline update-line">
+        <div class="media">
+          <div class="activity-line"></div>
+          <div class="activity-dot-primary"></div>
+          <div class="media-body d-block">
+            <h6> <span class="font-primary">20-04-2023</span>Today </h6>
+            <h5>Updated Product<i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
+            <p>What's the product report update? send me update.</p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="activity-dot-primary"></div>
+          <div class="media-body d-block">
+            <h6> <span class="font-primary">20-04-2023</span>Today<span class="badge pill-badge-primary m-l-10">new </span></h6>
+            <h5>James just like your product   <i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
+            <p>Here is the product update check this ASAP.</p>
+            <ul class="timeline-pro">
+              <li><img class="img-fluid" src="assets/images/dashboard-2/11.png" alt="Product-1"></li>
+              <li><img class="img-fluid" src="assets/images/dashboard-2/10.png" alt="Product-2"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="media">
+          <div class="activity-dot-primary"></div>
+          <div class="media-body d-block">
+            <h6> <span class="font-primary">20-04-2023</span>Today</h6>
+            <h5>Jihan Doe just like your product<i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
+            <p>Product has been already Delivered, let me show you.</p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-body d-block">
+            <div class="tomorrow-sec">
+              <p>Tomorrow</p>
+            </div>
+          </div>
+        </div>
+        <div class="media">
+          <div class="activity-dot-primary"></div>
+          <div class="media-body d-block">
+            <h6> <span class="font-primary">21-04-2023</span>Tomorrow</h6>
+            <h5>Today Total  Revenue<i class="fa fa-circle circle-dot-primary pull-right"></i></h5>
+            <p>Today total revenue details check this here.</p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="activity-dot-primary"></div>
+          <div class="media-body d-block">                                         
+            <div class="hospital-small-chart">
+              <div id="column-chart">   
+                <apx-chart  [series]="activityChart.series" [chart]="activityChart.chart" [dataLabels]="activityChart.dataLabels" [xaxis]="activityChart.xaxis" 
+                [yaxis]="activityChart.yaxis" [colors]="activityChart.colors"   [plotOptions]="activityChart.plotOptions"
+                >  </apx-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

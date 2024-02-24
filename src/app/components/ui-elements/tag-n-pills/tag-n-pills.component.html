@@ -1,0 +1,105 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <ng-container *ngFor="let tag of tagPills">
+      <div class="col-sm-12 col-xl-6">
+        <div class="card">
+          <div class="card-header pb-0">
+            <h5>{{tag.title}}</h5>
+          </div>
+          <div class="card-body">
+            <ng-container *ngFor="let b of tag.colors">
+              <span class="badge badge-{{b}}">{{b | titlecase}}</span>
+            </ng-container>
+            </div>
+        </div>
+      </div>
+    </ng-container>
+    
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Tags with number</h5>
+        </div>
+        <div class="card-body digits">
+          <ng-container *ngFor="let d of digits">
+            <a class="badge badge-{{d.color}}"  href="javascript:void(0)">{{d.digit}}</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Pills with number</h5>
+        </div>
+        <div class="card-body digits">
+        <ng-container *ngFor="let d of digits">
+          <span class="badge rounded-pill badge-{{d.color}}">{{d.digit}}</span>
+        </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Tags With icon</h5>
+        </div>
+        <div class="card-body pill-icon">
+          <ng-container *ngFor="let i of icons">
+            <a class="badge badge-{{i.color}}"  href="javascript:void(0)">
+              <app-feather-icons [icon]="i.icon"></app-feather-icons>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header pb-0">
+          <h5>Pills with Icon</h5>
+        </div>
+        <div class="card-body pill-icon">
+          <ng-container *ngFor="let i of icons">
+            <a class="badge rounded-pill badge-{{i.color}}"  href="javascript:void(0)">
+              <app-feather-icons [icon]="i.icon"></app-feather-icons>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card height-equal">
+        <div class="card-header pb-0">
+          <h5>Badges Example</h5>
+        </div>
+        <div class="card-body">
+          <h1>heading <span class="badge badge-primary">New</span></h1>
+          <h2>heading <span class="badge badge-primary">New</span></h2>
+          <h3>heading <span class="badge badge-primary">New</span></h3>
+          <h4>heading <span class="badge badge-primary">New</span></h4>
+          <h5>heading <span class="badge badge-primary">New</span></h5>
+          <h6>heading <span class="badge badge-primary">New</span></h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card height-equal">
+        <div class="card-header pb-0">
+          <h5>Badges as part buttons</h5>
+        </div>
+        <div class="card-body">
+          <ng-container *ngFor="let i of buttonWithIcon">
+            <div class="mb-3">
+              <button class="btn btn-{{i.color}}" type="button">{{i.text}}<span class="badge rounded-pill badge-light">
+                  <app-feather-icons [icon]="i.icon"></app-feather-icons>
+                </span>
+              </button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

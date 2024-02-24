@@ -1,0 +1,72 @@
+
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Cart</h5>
+         </div>
+         <div class="card-body">
+           <div class="row">
+             <div class="order-history table-responsive wishlist">
+               <table class="table table-bordered">
+                 <thead>
+                   <tr>
+                     <th>Product</th>
+                     <th>Nombre del Producto</th>
+                     <th>Precio</th>
+                     <th>Cantidad</th>
+                     <th>Acción</th>
+                     <th>Total</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                  <ng-container *ngFor="let item of products, let i = index">
+                    <tr>
+                      <td><img class="img-fluid img-40" src="{{item.imagen}}" alt="#"></td>
+                      <td>
+                        <div class="product-name"><a href="javascript:void(0)">
+                            <h6>{{item.nombreProducto}}</h6></a></div>
+                      </td>
+                      <td>${{item.precio}}</td>
+                      <td>
+                        <fieldset class="qty-box">
+                         <div class="input-group">
+                          <div class="input-group bootstrap-touchspin">
+                            <button class="btn btn-primary btn-square bootstrap-touchspin-down hover" (click)="cambiarCantidad(i, 'd')">
+                              <i class="fa fa-minus"></i>
+                            </button>
+                            <input class="touchspin text-center form-control" type="text" [value]="item.qty" readonly>
+                            <button class="btn btn-primary btn-square bootstrap-touchspin-up hover" (click)="cambiarCantidad(i, 'i')"><i class="fa fa-plus"></i></button>
+                          </div>
+                         </div>
+                        </fieldset>
+                      </td>
+                      <td><app-feather-icons class="hover" [icon]="'x-circle'" (click)="eliminar(i)"></app-feather-icons></td>
+                      <td>${{item.precio * item.qty}}</td>
+                    </tr>
+                  </ng-container>
+                   <tr>
+                     <td colspan="4">
+                       <div class="input-group">
+                         <input class="form-control me-2" type="text" placeholder="Enter coupan code"><a class="btn btn-primary" href="javascript:void(0)">Apply</a>
+                       </div>
+                     </td>
+                     <td class="total-amount">
+                       <h6 class="m-0 text-end"><span class="f-w-600">Total Precio :</span></h6>
+                     </td>
+                     <td><span>{{ total$ | async | currency }}</span></td>
+                   </tr>
+                   <tr>
+                     <td class="text-end" colspan="5"><a class="btn btn-secondary cart-btn-transform" [routerLink]="['/ecommerce/product']">Continuar comprando</a></td>
+                     <td><a class="btn btn-success cart-btn-transform" [routerLink]="['/ecommerce/checkout']">Comprar</a></td>
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

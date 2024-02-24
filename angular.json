@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angulardummy": {
+    "viho-16": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angulardummy",
+            "allowedCommonJsDependencies" :[
+              "apexcharts",
+              "ev-emitter/ev-emitter",
+              "@ckeditor/ckeditor5-build-classic",
+              "ev-emitter/ev-emitter",
+              "mousetrap",
+              "feather-icons",
+              "leaflet"
+               ],
+            "outputPath": "dist/viho-16",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -40,22 +47,26 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "8mb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
+              "optimization": {
+                "scripts": true,
+                 "styles": true,
+                 "fonts": false
+             },
               "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
+              "sourceMap": false,
               "namedChunks": true
             }
           },
@@ -65,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angulardummy:build:production"
+              "buildTarget": "viho-16:build:production"
             },
             "development": {
-              "browserTarget": "angulardummy:build:development"
+              "buildTarget": "viho-16:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angulardummy:build"
+            "buildTarget": "viho-16:build"
           }
         },
         "test": {
@@ -100,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bab8f6ef-1260-44fd-bcc6-d967e4f160d2"
   }
 }

@@ -1,0 +1,19 @@
+<div class="card income-card">
+    <div class="card-header">
+        <div class="header-top d-sm-flex align-items-center">
+            <h5>Sales overview</h5>
+            <div class="center-content">
+                <p class="d-sm-flex align-items-center"><span class="font-primary m-r-10 f-w-700">$859.25k</span><i
+                        class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>86% More than last year</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div id="chart-timeline-dashbord">
+            <apx-chart [chart]="sales.chart" [dataLabels]="sales.dataLabels" [stroke]="sales.stroke"
+                [fill]="sales.fill" [series]="sales.series" [title]="sales.title" [colors]="sales.colors"
+                [labels]="sales.labels" [xaxis]="sales.xaxis" [yaxis]="sales.yaxis" [tooltip]="sales.tooltip" [legend]="sales.legend" [markers]="sales.markers" [annotations]="sales.annotations" [responsive]="sales.responsive">
+            </apx-chart>
+        </div>
+    </div>
+</div>

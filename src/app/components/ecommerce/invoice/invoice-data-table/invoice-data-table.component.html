@@ -1,0 +1,45 @@
+<table class="table table-bordered table-striped">
+  <tbody>
+    <tr>
+      <td class="item">
+        <h6 class="mb-0">Item Description</h6>
+      </td>
+      <td class="Hours">
+        <h6 class="mb-0">Cantidad</h6>
+      </td>
+      <td class="Rate">
+        <h6 class="mb-0">Rate</h6>
+      </td>
+      <td class="subtotal">
+        <h6 class="mb-0">Sub-total</h6>
+      </td>
+    </tr>
+    <ng-container *ngFor="let p of products">
+      <tr>
+        <td>
+          <label>{{p.nombreProducto}}</label>
+          <p class="m-0">{{p.descripcion}}</p>
+        </td>
+        <td>
+          <p class="itemtext">{{p.qty}}</p>
+        </td>
+        <td>
+          <p class="itemtext">${{p.precio}}</p>
+        </td>
+        <td>
+          <p class="itemtext">${{p.precio * p.qty}}</p>
+        </td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="Rate">
+        <h6 class="mb-0 p-2">Total</h6>
+      </td>
+      <td class="payment">
+        <h6 class="mb-0 p-2">${{total$ | async}}</h6>
+      </td>
+    </tr>
+  </tbody>
+</table>

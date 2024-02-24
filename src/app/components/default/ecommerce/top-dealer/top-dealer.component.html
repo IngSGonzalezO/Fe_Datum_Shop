@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <div class="header-top d-sm-flex justify-content-between align-items-center">
+      <h5>Top Dealer</h5>
+      <div class="center-content">
+        <p class="d-sm-flex align-items-center"><span class="m-r-10">845 Dealer</span><i
+            class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>86% More Than Last Year</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="item">
+      <div class="row">
+        <div class="col-12">
+          <div class="item">
+            <owl-carousel-o [options]="customOptions">
+              <ng-container *ngFor="let slide of Sliders">
+              <ng-template carouselSlide >
+                <div class="card">
+                  <div class="top-dealerbox text-center">
+                    <img class="card-img-top" src={{slide.img}} alt="...">
+                    <h6>{{slide.name}}</h6>
+                    <p>{{slide.place}}</p><a class="btn btn-rounded" href="social-app">View More</a>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+            </owl-carousel-o>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="item">
+            <owl-carousel-o [options]="customOptions1">
+              <ng-container *ngFor="let slide of Sliders">
+              <ng-template carouselSlide >
+                <div class="card">
+                  <div class="top-dealerbox text-center">
+                    <img class="card-img-top" src={{slide.img}} alt="...">
+                    <h6>{{slide.name}}</h6>
+                    <p>{{slide.place}}</p><a class="btn btn-rounded" href="social-app">View More</a>
+                  </div>
+                </div>
+              </ng-template>
+            </ng-container>
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

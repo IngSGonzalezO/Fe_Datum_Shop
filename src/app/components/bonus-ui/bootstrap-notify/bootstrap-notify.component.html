@@ -1,0 +1,76 @@
+<div class="container-fluid">
+   <div class="row">
+     <div class="col-sm-12">
+       <div class="card">
+         <div class="card-header pb-0">
+           <h5>Bootstrap Notify</h5><span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+         </div>
+         <div class="card-body">
+           <div class="m-portlet__body">
+             <div class="row">
+               <div class="col-xl-5"></div>
+             </div>
+             <app-select></app-select>
+             <div class="row">
+               <div class="col-lg-6">
+                <ng-container *ngFor="let b of btnNotify">
+                  <div class="mb-3 row">
+                    <label class="col-sm-4 col-6 col-form-label">{{b.buttonTitle}}</label>
+                    <div class="col-sm-8 col-6">
+                      <div class="media-body text-start icon-state">
+                        <label class="switch">
+                          <input id="{{b.buttonId}}" type="checkbox"><span class="switch-state"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+                <div class="col-lg-6 theme-form sm-form">
+                 <ng-container *ngFor="let s of select">
+                  <div class="mb-3 row">
+                    <label class="col-form-label col-lg-3 col-sm-12">{{s.buttonTitle}}</label>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                      <input class="form-control digits" id="{{s.buttonId}}" type="number" value="{{s.value}}">
+                    </div>
+                  </div>
+                 </ng-container>
+                 </div>
+                 <div class="row">
+                   <label class="col-form-label col-lg-3 col-sm-12">State</label>
+                   <div class="col-lg-4 col-md-12 col-sm-12">
+                     <select class="form-select form-control height-35" id="bootstrap-notify-state">
+                       <option value="primary">Primary</option>
+                       <option value="secondary">Secondary</option>
+                       <option value="success">Success</option>
+                       <option value="info">Info</option>
+                       <option value="warning">Warning</option>
+                       <option value="danger">Danger</option>
+                       <option value="light">light</option>
+                       <option value="dark">dark</option>
+                     </select>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="card-footer">
+           <div class="col-sm-12">
+             <button class="btn btn-primary" id="bootstrap-notify-gen-btn">Display Notify</button>&nbsp;
+             <button class="btn btn-light" type="reset">Reset</button>
+           </div>
+         </div>
+       </div>
+       <div class="card">
+         <div class="card-body">
+           <div class="row">
+             <div class="col-sm-12">
+               <h5>Example Of How To Use Bootstrap Notify</h5><span>Click Display Notify button to show different notify demo's & display script of different Notify demo below</span>
+               <pre class="mb-0"><code id="notify-code-show"></code></pre>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+</div>

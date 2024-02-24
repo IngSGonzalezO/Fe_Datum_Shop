@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding, Inject, PLATFORM_ID } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { LoadingBarService } from '@ngx-loading-bar/core';
+import { delay, map, withLatestFrom } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angulardummy';
+  @HostBinding('@.disabled')
+  public animationsDisabled = false;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+    private loader: LoadingBarService) {
+    
+  }
+
+  toggleAnimations() {
+    this.animationsDisabled = !this.animationsDisabled;
+  }
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
 }

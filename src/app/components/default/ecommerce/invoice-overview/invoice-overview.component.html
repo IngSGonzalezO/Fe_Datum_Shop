@@ -1,0 +1,19 @@
+<div class="card">
+      <div class="card-header">
+        <div class="header-top d-sm-flex justify-content-between align-items-center">
+          <h5>Invoice Overview    </h5>
+          <div class="center-content">                                                               
+            <p class="d-sm-flex align-items-center"><span class="m-r-10">$5,56548k</span><i class="toprightarrow-primary fa fa-arrow-up m-r-10"></i>94% More Than Last Year</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <div id="timeline-chart">
+            <apx-chart [chart]="invoice.chart" [responsive]="invoice.responsive"
+             [colors]="invoice.colors" [stroke]="invoice.stroke" [dataLabels]="invoice.dataLabels"  
+             [series]="invoice.series" [markers]="invoice.markers" [xaxis]="invoice.xaxis"
+             [yaxis]="invoice.yaxis" [grid]="invoice.grid" [legend]="invoice.legend"
+             [fill]="invoice.fill"   [series]="invoice.series"></apx-chart>
+        </div>
+      </div>
+</div>
