@@ -1,27 +1,24 @@
-FROM ubi8/nodejs-18:1-94 AS build
+# Import the base image as UBI-Nodejs 18 image
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
 
-# Set the working directory
-WORKDIR /builddir
+# Set the working directory to /project
+WORKDIR /project
 
-RUN npm cache clean --force
+# Copy package files in container currunt direcctory
+COPY --chown=1001:1001 package.json package-lock.json ./
 
-# Copy files from local machine to virtual directory in docker image
+
+# Install all Angular dependacies
+RUN npm ci
+
+# Add application files in container 
 COPY . .
 
-RUN npm install -g npm@9.9.2
+# Set permision of .angular file in container
+VOLUME ["/project/.angular"]
 
-RUN npm install --legacy-peer-deps
+# Open port to allow traffic in container
+EXPOSE 8080
 
-# Generate the build of the application
-RUN npm run build
-
-#WORKDIR /builddir/dist
-
-# Stage 2: Serve app with nginx server
-FROM ubi8/nginx-122:1-47
-
-COPY --from=build /builddir/dist/angulardummy /usr/share/nginx/html
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
-CMD nginx -g "daemon off;"
+# Run start script using npm command
+CMD ["npm", "start"]
