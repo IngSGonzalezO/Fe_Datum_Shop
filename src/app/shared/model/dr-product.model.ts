@@ -7,5 +7,6 @@ export interface DrProduct {
     moneda: string;
     ranking: number;
     imagen: string;
+    precioDescuento: number;
     qty: number;
 }

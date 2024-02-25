@@ -121,16 +121,18 @@ export class ProductBoxComponent implements OnInit {
     this.cargando = true;
     for (let i = 0; i < 4; i++) {
       const aleatorio = Math.floor(Math.random() * this.imagenes.length);
+      const precio = this.aleatorio(10000);
       this.listData.push({
         idProductos: this.listData.length + 1,
         nombreProducto: this.imagenes[aleatorio].split('.')[0],
-        precio: this.aleatorio(2000),
         descripcion: this.loremIpsu(this.aleatorio(15)),
         imagen: `${this.dirBase}/${this.imagenes[aleatorio].split('.')[0]}.png`,
         marca: this.marca(this.aleatorio(8)),
         moneda: 'L. ',
         qty: 1,
-        ranking: 5
+        ranking: 5,
+        precioDescuento: this.aleatorio(precio) + precio,
+        precio,
       });
     }
 

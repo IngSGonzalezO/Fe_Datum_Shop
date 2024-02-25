@@ -1,5 +1,5 @@
 <app-loader [show]="cargando"></app-loader>
-<div class="row" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50" (scrolled)="simularDatos()">
+<div class="row" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="50" (scrolled)="simularDatos()">
     <div [class.col-xl-3]="col_xl_3" [class.col-xl-4]="xl_4" [class.col-sm-3]="col_sm_3"
     [class.col-xl-4]="col_xl_4" [class.col-sm-4]="col_sm_4" [class.col-xl-6]="col_xl_6"
     [class.col-sm-6]="col_sm_6" [class.col-xl-12]="col_xl_12" [class.col-xl-2]="col_xl_2" *ngFor="let product of listData">
@@ -68,7 +68,7 @@
               <h4>{{product.nombreProducto}}</h4></a>
             <p>{{product.descripcion}}</p>
             <div class="product-price">${{product.precio}}
-              <del>${{aleatorio(product.precio) + product.precio}}</del>
+              <del>${{product.precioDescuento}}</del>
             </div>
           </div>
         </div>
